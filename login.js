@@ -8,9 +8,9 @@ document.getElementById('btn-login').addEventListener('click', function () {
     console.log(userPassword);
 
     if (userEmail == 'golam@gmail.com' && userPassword == 'qwerty123') {
-        alert('Logged in!!');
+        window.location.href = 'bank.html';
     } else {
-        alert('Invalid Credentials!!');
+        alert('Invalid Credentials!!')
         userEmailField.value = '';
         userPasswordField.value = '';
     }
