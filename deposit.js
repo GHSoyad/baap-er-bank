@@ -1,33 +1,39 @@
 // Add event listener
 document.getElementById('deposit-btn').addEventListener('click', function () {
 
-    // get deposit amount
+    // Get deposit amount
     const depositField = document.getElementById('deposit-field');
-    const depositFieldString = depositField.value;
-    const depositFieldValue = parseFloat(depositFieldString);
+    const depositFieldValue = depositField.value;
+    const depositAmount = parseFloat(depositFieldValue);
 
-    // get current deposit
+    // Get current deposit
     const depositCurrent = document.getElementById('deposit-total');
-    const depositCurrentString = depositCurrent.innerText;
-    const depositCurrentValue = parseFloat(depositCurrentString);
+    const depositCurrentValue = depositCurrent.innerText;
+    const depositCurrentAmount = parseFloat(depositCurrentValue);
 
-    // get current balance
+    // Get current balance
     const balanceCurrent = document.getElementById('balance-total');
-    const balanceCurrentString = balanceCurrent.innerText;
-    const balanceCurrentValue = parseFloat(balanceCurrentString);
+    const balanceCurrentValue = balanceCurrent.innerText;
+    const balanceCurrentTotal = parseFloat(balanceCurrentValue);
 
-    // return error if empty field
+    // Clear field
+    depositField.value = '';
+
+    // Return error if empty field
     if (depositField.value === '') {
-        return alert('Enter a valid amount!!')
+        return alert('Enter deposit amount first!!')
+    }
+
+    // Return error if deposit amount is negative
+    if (depositAmount < 0) {
+        return alert('Deposit amount cannot be negative!!')
     }
 
     // calculate total deposit
-    const depositTotalValue = depositCurrentValue + depositFieldValue;
-    depositCurrent.innerText = depositTotalValue;
+    const depositTotal = depositCurrentAmount + depositAmount;
+    depositCurrent.innerText = depositTotal;
 
     // calculate total balance
-    const balanceTotalValue = balanceCurrentValue + depositFieldValue;
-    balanceCurrent.innerText = balanceTotalValue;
-
-    depositField.value = '';
+    const balanceTotal = balanceCurrentTotal + depositAmount;
+    balanceCurrent.innerText = balanceTotal;
 })
