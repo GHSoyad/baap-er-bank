@@ -16,13 +16,13 @@ document.getElementById('deposit-btn').addEventListener('click', function () {
     const balanceCurrentValue = balanceCurrent.innerText;
     const balanceCurrentTotal = parseFloat(balanceCurrentValue);
 
-    // Clear field
-    depositField.value = '';
-
     // Return error if empty field
     if (depositField.value === '') {
         return alert('Enter deposit amount first!!')
     }
+
+    // Clear field
+    depositField.value = '';
 
     // Return error if deposit amount is negative
     if (depositAmount < 0) {

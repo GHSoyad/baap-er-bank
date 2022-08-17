@@ -16,18 +16,23 @@ document.getElementById('withdraw-btn').addEventListener('click', function () {
     const balanceCurrentValue = balanceCurrent.innerText;
     const balanceCurrentTotal = parseFloat(balanceCurrentValue);
 
+    // Return error if empty field
+    if (withdrawField.value === '') {
+        return alert('Enter deposit amount first!!')
+    }
+
     // Clear withdraw field
     withdrawField.value = '';
 
-    // Error if withdraw is more than current balance
+    // Return error if withdraw amount is negative
+    if (withdrawAmount < 0) {
+        return alert('Withdraw amount cannot be negative!!');
+    }
+
+    // Return error if withdraw is more than current balance
     if (balanceCurrentTotal < withdrawAmount) {
         const depositNeeded = withdrawAmount - balanceCurrentTotal;
         return alert('Cannot withdraw this amount. Deposit first!!', depositNeeded);
-    }
-
-    // Error if withdraw amount is negative
-    if (withdrawAmount < 0) {
-        return alert('Withdraw amount cannot be negative!!');
     }
 
     // Calculate total withdraw
