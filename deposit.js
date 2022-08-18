@@ -1,39 +1,25 @@
 // Add event listener
 document.getElementById('deposit-btn').addEventListener('click', function () {
 
-    // Get deposit amount
-    const depositField = document.getElementById('deposit-field');
-    const depositFieldValue = depositField.value;
-    const depositAmount = parseFloat(depositFieldValue);
-
-    // Get current deposit
-    const depositCurrent = document.getElementById('deposit-total');
-    const depositCurrentValue = depositCurrent.innerText;
-    const depositCurrentAmount = parseFloat(depositCurrentValue);
-
-    // Get current balance
-    const balanceCurrent = document.getElementById('balance-total');
-    const balanceCurrentValue = balanceCurrent.innerText;
-    const balanceCurrentTotal = parseFloat(balanceCurrentValue);
+    const depositAmount = getInputAmountById('deposit-field');
+    const depositCurrentTotal = getCurrentTotalById('deposit-total');
+    const balanceCurrentTotal = getCurrentTotalById('balance-total');
 
     // Return error if empty field
-    if (depositField.value === '') {
-        return alert('Enter deposit amount first!!')
+    if (isNaN(depositAmount)) {
+        return alert('Enter deposit amount first!!');
     }
 
-    // Clear field
-    depositField.value = '';
-
-    // Return error if deposit amount is negative
+    // Return error if input amount is negative
     if (depositAmount < 0) {
         return alert('Deposit amount cannot be negative!!')
     }
 
     // calculate total deposit
-    const depositTotal = depositCurrentAmount + depositAmount;
-    depositCurrent.innerText = depositTotal;
+    const depositTotal = depositAmount + depositCurrentTotal;
+    setTotalAmountById('deposit-total', depositTotal);
 
     // calculate total balance
     const balanceTotal = balanceCurrentTotal + depositAmount;
-    balanceCurrent.innerText = balanceTotal;
+    setTotalAmountById('balance-total', balanceTotal);
 })

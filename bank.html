@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <main class="container max-w-5xl mx-auto px-6">
+    <main class="container max-w-5xl mx-auto px-6 cursor-default">
         <section>
             <h1 class="my-16 text-4xl text-center font-semibold">Lets get some moneeyyy...!!!</h1>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-white font-medium">
@@ -32,20 +32,21 @@
                     <p class="text-3xl font-medium">Deposit here</p>
                     <input class="block w-4/5 text-black rounded p-1 my-6 focus:outline-none" type="number"
                         id="deposit-field" placeholder="$ Deposit Amount">
-                    <button class="px-5 py-1 bg-violet-800 rounded font-bold hover:bg-violet-700"
+                    <button class="px-5 py-1 bg-violet-700 rounded font-bold hover:bg-violet-600"
                         id="deposit-btn">Deposit</button>
                 </div>
                 <div class="bg-pink-400 px-12 py-8 rounded-xl">
                     <p class="text-3xl font-medium">Withdraw here</p>
                     <input class="block w-4/5 text-black rounded p-1 my-6 focus:outline-none" type="number"
                         id="withdraw-field" placeholder="$ Withdraw Amount">
-                    <button class="px-5 py-1 bg-pink-800 rounded font-bold hover:bg-pink-700"
+                    <button class="px-5 py-1 bg-pink-700 rounded font-bold hover:bg-pink-600"
                         id="withdraw-btn">Withdraw</button>
                 </div>
             </div>
         </section>
     </main>
     <script src=" tailwind.config.js"></script>
+    <script src="functions.js"></script>
     <script src="deposit.js"></script>
     <script src="withdraw.js"></script>
 </body>
