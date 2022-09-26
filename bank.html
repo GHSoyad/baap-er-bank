@@ -14,11 +14,11 @@
         <section>
             <h1 class="my-16 text-4xl text-center font-semibold">Lets get some moneeyyy...!!!</h1>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 text-white font-medium">
-                <div class="bg-green-500 p-8 rounded-lg">
+                <div class="bg-green-500 p-4 sm:p-8 rounded-lg">
                     <p class="text-2xl mb-2">Deposit</p>
                     <p class="text-4xl">$<span id="deposit-total">00</span></p>
                 </div>
-                <div class="bg-red-500 p-8 rounded-lg">
+                <div class="bg-red-500 p-4 sm:p-8 rounded-lg">
                     <p class="text-2xl mb-2">Withdraw</p>
                     <p class="text-4xl">$<span id="withdraw-total">00</span></p>
                 </div>
@@ -28,18 +28,18 @@
                 </div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 text-white">
-                <div class="bg-violet-400 px-12 py-8 rounded-xl">
+                <div class="bg-violet-400 p-6 sm:px-12 sm:py-8 rounded-xl">
                     <p class="text-3xl font-medium">Deposit here</p>
-                    <input class="block w-4/5 text-black rounded p-1 my-6 focus:outline-none" type="number"
+                    <input class="block w-full sm:w-4/5 text-black rounded p-2 my-6 focus:outline-none" type="number"
                         id="deposit-field" placeholder="$ Deposit Amount">
-                    <button class="px-5 py-1 bg-violet-700 rounded font-bold hover:bg-violet-600"
+                    <button class="px-5 py-2 bg-violet-700 rounded font-bold hover:bg-violet-600"
                         id="deposit-btn">Deposit</button>
                 </div>
-                <div class="bg-pink-400 px-12 py-8 rounded-xl">
+                <div class="bg-pink-400 p-6 sm:px-12 sm:py-8 rounded-xl">
                     <p class="text-3xl font-medium">Withdraw here</p>
-                    <input class="block w-4/5 text-black rounded p-1 my-6 focus:outline-none" type="number"
+                    <input class="block w-full sm:w-4/5 text-black rounded p-2 my-6 focus:outline-none" type="number"
                         id="withdraw-field" placeholder="$ Withdraw Amount">
-                    <button class="px-5 py-1 bg-pink-700 rounded font-bold hover:bg-pink-600"
+                    <button class="px-5 py-2 bg-pink-700 rounded font-bold hover:bg-pink-600"
                         id="withdraw-btn">Withdraw</button>
                 </div>
             </div>
